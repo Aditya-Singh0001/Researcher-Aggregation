@@ -1,30 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Standard Next.js font loading
 import "./globals.css";
 import Navbar from "@/components/layouts/navbar";
-import Footer from "@/components/layouts/footer";
-<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet" />
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Academic Directory",
-  description: "Search and connect with global researchers",
+  description: "Global Researcher Directory",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
+      <body className="bg-slate-50 min-h-screen">
         <Navbar />
-        <main className="grow">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
